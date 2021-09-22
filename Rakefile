@@ -5,7 +5,7 @@ require 'rubocop/rake_task'
 task default: %w[lint test]
 
 task :test do
-  ruby 'test/game_test.rb'
+  ruby 'test/cell_test.rb'
 end
 
 RuboCop::RakeTask.new(:lint) do |task|
