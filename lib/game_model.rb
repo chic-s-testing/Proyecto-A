@@ -17,44 +17,6 @@ class GameModel
     @bomb_board
   end
 
-  def print_board
-    @bomb_board.each do |row|
-      row.each do |cell|
-        print(cell.value)
-      end
-      print("\n")
-    end
-  end
-
-  def check_around_values(board, row, column)
-    spaces_to_check = [[1, 1], [1, -1], [-1, -1], [-1, 1], [1, 0], [0, 1], [-1, 0], [0, -1]]
-    spaces_to_check_col = [[1, 1], [-1, 1], [1, 0], [0, 1], [-1, 0]]
-    spaces_to_check_row = [[-1, -1], [-1, 1], [0, 1], [-1, 0], [0, -1]]
-    bombs = 0
-    if row < 9
-      if column.positive?
-        spaces_to_check.each do |space|
-          if !board[row + space[0]][column + space[1]].nil? && board[row + space[0]][column + space[1]].value == -1
-            bombs += 1
-          end
-        end
-      else
-        spaces_to_check_col.each do |space|
-          if !board[row + space[0]][column + space[1]].nil? && board[row + space[0]][column + space[1]].value == -1
-            bombs += 1
-          end
-        end
-      end
-    else
-      spaces_to_check_row.each do |space|
-        if !board[row + space[0]][column + space[1]].nil? && board[row + space[0]][column + space[1]].value == -1
-          bombs += 1
-        end
-      end
-    end
-    bombs
-  end
-
   def coordinate_sample
     all_coor = []
     (0..9).each do |x|
@@ -98,6 +60,45 @@ class GameModel
       end
     end
   end
+
+  def check_around_values(board, row, column)
+    spaces_to_check = [[1, 1], [1, -1], [-1, -1], [-1, 1], [1, 0], [0, 1], [-1, 0], [0, -1]]
+    spaces_to_check_col = [[1, 1], [-1, 1], [1, 0], [0, 1], [-1, 0]]
+    spaces_to_check_row = [[-1, -1], [-1, 1], [0, 1], [-1, 0], [0, -1]]
+    bombs = 0
+    if row < 9
+      if column.positive?
+        spaces_to_check.each do |space|
+          if !board[row + space[0]][column + space[1]].nil? && board[row + space[0]][column + space[1]].value == -1
+            bombs += 1
+          end
+        end
+      else
+        spaces_to_check_col.each do |space|
+          if !board[row + space[0]][column + space[1]].nil? && board[row + space[0]][column + space[1]].value == -1
+            bombs += 1
+          end
+        end
+      end
+    else
+      spaces_to_check_row.each do |space|
+        if !board[row + space[0]][column + space[1]].nil? && board[row + space[0]][column + space[1]].value == -1
+          bombs += 1
+        end
+      end
+    end
+    bombs
+  end
+
+  def print_board
+    @bomb_board.each do |row|
+      row.each do |cell|
+        print(cell.value)
+      end
+      print("\n")
+    end
+  end
+
 end
 
 GameModel.new
