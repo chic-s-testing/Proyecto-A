@@ -13,6 +13,7 @@ class GameModel
     create_bomb_board
     put_bombs
     create_cells
+    print_board
     @bomb_board
   end
 
@@ -68,14 +69,15 @@ class GameModel
 
   def create_bomb_board
     @bomb_board = []
-    9.times do
+    10.times do
       new_row = []
-      9.times do
+      10.times do
         new_cell = Cell.new(0)
         new_row.append(new_cell)
       end
       @bomb_board.append(new_row)
     end
+    @bomb_board
   end
 
   def put_bombs
