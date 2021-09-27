@@ -13,8 +13,4 @@ class GameMenuView
   def puts_request_action
     puts 'Please Write the action you want to do (put flag, delete flag, uncover cell):'
   end
-
-  def puts_congratulation
-    puts 'Congratulations! You just won!'
-  end
 end

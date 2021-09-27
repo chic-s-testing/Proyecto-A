@@ -24,4 +24,8 @@ class GameView
       print '-|'
     end
   end
+
+  def puts_congratulation
+    puts 'Congratulations! You just won!'
+  end
 end
