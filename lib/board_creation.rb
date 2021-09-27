@@ -5,10 +5,11 @@ require_relative 'board/cell_values'
 
 # board creation class
 class Board
-  attr_reader :board, :bomb_board
+  attr_reader :board, :bomb_board, :not_bombs_cells, :bombs
 
   def initialize
     @board = create_board
+    @not_bombs_cells = 100 - @bombs
   end
 
   def create_board
