@@ -24,6 +24,18 @@ class GameModel
   def winner
     @number_discovered == @number_not_bombs
   end
+
+  def mark_uncover(row, col)
+    @board_instance.board[row][col].uncover_cell
+  end
+
+  def mark_add_flag(row, col)
+    @board_instance.board[row][col].put_flag
+  end
+
+  def mark_remove_flag(row, col)
+    @board_instance.board[row][col].delete_flag
+  end
 end
 
 GameModel.new
