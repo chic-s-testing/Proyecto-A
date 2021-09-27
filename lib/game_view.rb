@@ -28,4 +28,8 @@ class GameView
   def puts_congratulation
     puts 'Congratulations! You just won!'
   end
+  
+  def puts_game_over
+    puts '¡Oh no! You have stepped on a mine, game over :(.'
+  end
 end
