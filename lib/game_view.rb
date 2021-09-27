@@ -24,4 +24,8 @@ class GameView
       print '-|'
     end
   end
+
+  def puts_game_over
+    puts '¡Oh no! You have stepped on a mine, game over :(.'
+  end
 end
