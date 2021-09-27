@@ -20,6 +20,10 @@ class GameModel
 
     false
   end
+
+  def winner
+    @number_discovered == @number_not_bombs
+  end
 end
 
 GameModel.new
