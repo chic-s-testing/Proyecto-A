@@ -45,4 +45,12 @@ class InitializeModelTest < Test::Unit::TestCase
     assert_true(@model.board[0][0].visible)
     assert_equal(@model.board[0][0].value, value)
   end
+
+  def test_check_is_bomb
+    bomb_cells = @model.board_instance.bombs_coordinates
+    bomb_cells.each do |pos|
+      is_bomb = @model.check_cell_bomb(pos[0], pos[1])
+      assert_equal(is_bomb, true)
+    end
+  end
 end
