@@ -5,7 +5,7 @@ require_relative 'board_creation'
 
 # Model for Minesweeper
 class GameModel
-  attr_reader :board, :number_not_bombs
+  attr_reader :board, :number_not_bombs, :board_instance
 
   def initialize
     @board_instance = Board.new
