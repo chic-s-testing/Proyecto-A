@@ -24,4 +24,11 @@ class GameView
       print '-|'
     end
   end
+
+  def print_initial_game
+    puts '¡Welcome to Minesweeper!'
+    puts 'The objective of the game is to clear a minefield without detonating any mine.'
+    puts 'You can also put flags where you think there are mines...'
+    puts 'Good Luck :)'
+  end
 end
