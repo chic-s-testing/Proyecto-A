@@ -12,7 +12,6 @@ class GameModel
     @board = @board_instance.bomb_board
     @number_not_bombs = @board_instance.not_bombs_cells
     @number_discovered = 0
-    print_board
   end
 end
 
