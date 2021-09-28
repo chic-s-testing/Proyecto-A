@@ -14,7 +14,7 @@ class GameMenuView
     puts 'Please Write the action you want to do (put flag, delete flag, uncover cell):'
   end
 
-  def print_initial_game
+  def puts_initial_game
     puts '¡Welcome to Minesweeper!'
     puts 'The objective of the game is to clear a minefield without detonating any mine.'
     puts 'You can also put flags where you think there are mines...'
