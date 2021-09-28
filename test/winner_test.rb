@@ -4,7 +4,7 @@ require_relative 'test_helper'
 require_relative '../lib/game_model'
 require 'test/unit'
 
-class InitializeModelTest < Test::Unit::TestCase
+class ModelWinnerTest < Test::Unit::TestCase
   def setup
     @model = GameModel.new
   end
