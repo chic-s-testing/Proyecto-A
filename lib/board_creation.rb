@@ -7,20 +7,29 @@ require_relative 'board/cell_values'
 class Board
   attr_reader :board, :bomb_board, :not_bombs_cells, :bombs, :bombs_coordinates
 
-  def initialize
+  def initialize(bomb_seed = 'random')
+    coordinate_sample(bomb_seed)
     @board = create_board
     @not_bombs_cells = 100 - @bombs
   end
 
   def create_board
-    coordinate_sample
     create_bomb_board
     put_bombs
     create_cells
     @bomb_board
   end
 
-  def coordinate_sample
+  def coordinate_sample(bomb_seed)
+    if bomb_seed == 'random'
+      random_bombs_sample
+    else
+      @bombs = bomb_seed.length
+      @bombs_coordinates = bomb_seed
+    end
+  end
+
+  def random_bombs_sample
     all_coor = []
     (0..9).each do |x|
       (0..9).each do |y|
@@ -29,7 +38,6 @@ class Board
     end
     @bombs = rand(7..13)
     @bombs_coordinates = all_coor.sample(@bombs)
-    @bombs_coordinates
   end
 
   def create_bomb_board
