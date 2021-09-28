@@ -53,4 +53,21 @@ class InitializeModelTest < Test::Unit::TestCase
       assert_equal(is_bomb, true)
     end
   end
+
+  def test_mark_uncover
+    @model.mark_uncover(0, 0)
+    assert_true(@model.board[0][0].visible)
+  end
+
+  def test_mark_add_flag
+    @model.mark_add_flag(1, 1)
+    assert_true(@model.board[1][1].flag)
+  end
+
+  def test_mark_remove_flag
+    @model.board[2][2].put_flag
+    assert_true(@model.board[2][2].flag)
+    @model.mark_remove_flag(2, 2)
+    assert_false(@model.board[2][2].flag)
+  end
 end

@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
-# The principal controller for the game
+# Game's controller
 class GameController
-  def initialize(boardModel, boardView)
-    @model = boardModel
-    @view = boardView
+  def initialize(board_view, board_model, menu_view)
+    @model = board_model
+    @view = board_view
+    @menu_view = menu_view
   end
 end
