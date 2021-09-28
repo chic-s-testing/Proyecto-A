@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
+require_relative 'lib/game_view'
+
 # Observer class for the game view
 class Observer
-  def update(_board)
-    raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
+  def update(game, board)
+    game.print_board(board)
   end
 end
