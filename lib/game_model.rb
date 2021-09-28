@@ -21,6 +21,10 @@ class GameModel
     false
   end
 
+  def winner
+    @number_discovered == @number_not_bombs
+  end
+
   def mark_uncover(row, col)
     @board_instance.board[row][col].uncover_cell
   end
