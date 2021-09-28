@@ -10,7 +10,7 @@ require_relative './game_menu_view'
 model = GameModel.new
 view = GameView.new
 menu_view = GameMenuView.new
-model.addObserver(view, menu_view)
+model.addObserver(view)
 controller = BoardController.new(model, view, menu_view)
 
 menu_view.print_initial_game
