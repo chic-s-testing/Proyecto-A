@@ -37,5 +37,3 @@ class GameModel
     @board_instance.board[row][col].delete_flag
   end
 end
-
-GameModel.new
