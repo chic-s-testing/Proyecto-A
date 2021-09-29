@@ -16,5 +16,5 @@ game_menu = GameMenu.new(menu_view)
 controller = BoardController.new(model, view, menu_view)
 
 menu_view.print_initial_game
-controller.print_board
-controller.request_input
+menu_view.print_board
+
