@@ -20,8 +20,17 @@ class CellTest < Test::Unit::TestCase
     assert_true(@cell.flag)
   end
 
-  def test_uncover_cell
+  def test_uncover_cell_with_flag
+    @cell.put_flag
     value = @cell.uncover_cell
+    assert_false(@cell.flag)
+    assert_true(@cell.visible)
+    assert_equal(0, value)
+  end
+
+  def test_uncover_cell_without_flag
+    value = @cell.uncover_cell
+    assert_false(@cell.flag)
     assert_true(@cell.visible)
     assert_equal(0, value)
   end
