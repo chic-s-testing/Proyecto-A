@@ -6,8 +6,8 @@ task default: %w[lint test]
 
 task :test do
   ruby 'test/cell_test.rb'
-  ruby 'test/create_board_test.rb'
   ruby 'test/initialize_model_test.rb'
+  ruby 'test/create_board_test.rb'
   ruby 'test/winner_test.rb'
 end
 
