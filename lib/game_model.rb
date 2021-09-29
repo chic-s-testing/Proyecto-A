@@ -2,13 +2,14 @@
 
 require_relative 'cell'
 require_relative 'board_creation'
+require_relative 'game_view'
 
 # Model for Minesweeper
 class GameModel
   attr_reader :board, :number_not_bombs, :board_instance
 
-  def initialize
-    @board_instance = Board.new
+  def initialize(bomb_seed = 'random')
+    @board_instance = Board.new(bomb_seed)
     @board = @board_instance.bomb_board
     @number_not_bombs = @board_instance.not_bombs_cells
     @number_discovered = 0
@@ -38,5 +39,3 @@ class GameModel
     @board_instance.board[row][col].delete_flag
   end
 end
-
-GameModel.new
