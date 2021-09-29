@@ -4,6 +4,10 @@ require_relative 'lib/game_view'
 
 # Observer class for the game view
 class Observer
+  def initialize
+    raise 'Cannot initialize an abstract Observer class'
+  end
+
   def update(game, board)
     game.print_board(board)
   end
