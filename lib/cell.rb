@@ -19,7 +19,7 @@ class Cell
   end
 
   def uncover_cell
-    delete_flag() if @flag
+    delete_flag if @flag
     @visible = true
     @value
   end
