@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
-require_relative './game_menu_view'
-
 # Game's menu
 class GameMenu
-  def initialize
-    @game_view = GameMenuView.new
+  def initialize(menu_view)
+    @game_view = menu_view
   end
 
   def request_x_coordinate
