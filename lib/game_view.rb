@@ -32,4 +32,8 @@ class GameView
   def puts_game_over
     puts '¡Oh no! You have stepped on a mine, game over :(.'
   end
+
+  def update(board)
+    print_board(board)
+  end
 end
