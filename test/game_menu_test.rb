@@ -8,7 +8,7 @@ require_relative '../lib/game_menu_view'
 
 class GameMenuTest < Test::Unit::TestCase
   def setup
-    menu_view = GameView.new
+    menu_view = GameMenuView.new
     @menu = GameMenu.new(menu_view)
   end
 
