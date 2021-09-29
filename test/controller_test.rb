@@ -5,6 +5,7 @@ require_relative '../lib/game_view'
 require_relative '../lib/game_model'
 require_relative '../lib/game_menu_view'
 require_relative '../lib/game_controller'
+require_relative '../lib/game_menu'
 
 require 'test/unit'
 
@@ -13,7 +14,8 @@ class GameControllerTest < Test::Unit::TestCase
     @model = GameModel.new([[0, 0]])
     @view = GameView.new
     @menu_view = GameMenuView.new
-    @controller = GameController.new(@view, @model, @menu_view)
+    game_menu = GameMenu.new(@menu_view)
+    @controller = GameController.new(@view, @model, @menu_view, game_menu)
     $stdout = File.open(File::NULL, 'w')
   end
 
