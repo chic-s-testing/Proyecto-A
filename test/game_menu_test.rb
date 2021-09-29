@@ -4,10 +4,12 @@ require 'stringio'
 require_relative 'test_helper'
 require 'test/unit'
 require_relative '../lib/game_menu'
+require_relative '../lib/menu_view'
 
 class GameMenuTest < Test::Unit::TestCase
   def setup
-    @menu = GameMenu.new
+    menu_view = GameView.new
+    @menu = GameMenu.new(menu_view)
   end
 
   def test_request_x_coordinate
