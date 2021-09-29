@@ -5,11 +5,11 @@ require_relative 'board/cell_values'
 
 # board creation class
 class Board
-  attr_reader :board, :bomb_board, :not_bombs_cells, :bombs, :bombs_coordinates
+  attr_reader :board, :not_bombs_cells, :bombs, :bombs_coordinates
 
   def initialize(bomb_seed = 'random')
     coordinate_sample(bomb_seed)
-    @board = create_board
+    create_board
     @not_bombs_cells = 100 - @bombs
   end
 
@@ -17,7 +17,6 @@ class Board
     create_bomb_board
     put_bombs
     create_cells
-    @bomb_board
   end
 
   def coordinate_sample(bomb_seed)
@@ -41,33 +40,33 @@ class Board
   end
 
   def create_bomb_board
-    @bomb_board = []
+    board = []
     10.times do
       new_row = []
       10.times do
         new_cell = Cell.new(0)
         new_row.append(new_cell)
       end
-      @bomb_board.append(new_row)
+      board.append(new_row)
     end
-    @bomb_board
+    @board = board
   end
 
   def put_bombs
     @bombs_coordinates.each do |bomb|
       new_cell = Cell.new(-1)
-      @bomb_board[bomb[0]][bomb[1]] = new_cell
+      @board[bomb[0]][bomb[1]] = new_cell
     end
   end
 
   def create_cells
     (0..9).each do |row|
       (0..9).each do |column|
-        next if @bomb_board[row][column].value == -1
+        next if @board[row][column].value == -1
 
-        number_bombs = check_around_values(@bomb_board, row, column)
+        number_bombs = check_around_values(@board, row, column)
         new_cell = Cell.new(number_bombs)
-        @bomb_board[row][column] = new_cell
+        @board[row][column] = new_cell
       end
     end
   end

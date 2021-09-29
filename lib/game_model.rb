@@ -10,7 +10,7 @@ class GameModel
 
   def initialize(bomb_seed = 'random')
     @board_instance = Board.new(bomb_seed)
-    @board = @board_instance.bomb_board
+    @board = @board_instance.board
     @number_not_bombs = @board_instance.not_bombs_cells
     @number_discovered = 0
   end
