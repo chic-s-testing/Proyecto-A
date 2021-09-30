@@ -12,6 +12,6 @@ class GameMenuStub
   end
 
   def request_action
-    'uncover'
+    'uncover cell'
   end
 end

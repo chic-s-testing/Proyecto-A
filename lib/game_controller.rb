@@ -2,6 +2,8 @@
 
 # Game's controller
 class GameController
+  attr_reader :status
+  
   def initialize(board_view, board_model, menu_view, game_menu)
     @model = board_model
     @view = board_view

@@ -1,16 +1,14 @@
 # frozen_string_literal: true
 
 class GameModelStub
-  attr_reader :board, :number_not_bombs, :board_instance
-
   def initialize(*); end
 
   def check_cell_bomb(*)
-    false
+    true
   end
 
   def winner
-    true
+    false
   end
 
   def mark_uncover(*); end
