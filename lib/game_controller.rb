@@ -12,6 +12,7 @@ class GameController
   def start; end
 
   def select_coordinates(row, col, action = 'uncover')
+    row, col = convert_input_to_coordinates(row, col)
     case action
     when 'uncover cell'
       return 'game_over' if check_game_over_routine(row, col)
@@ -38,5 +39,9 @@ class GameController
       return true
     end
     false
+  end
+
+  def convert_input_to_coordinates(row, col)
+    [row - 1, col - 1]
   end
 end
