@@ -20,30 +20,30 @@ class GameControllerTest < Test::Unit::TestCase
   end
 
   def test_select_coordinates_put_flag
-    status = @controller.select_coordinates(1, 1, 'put_flag')
+    status = @controller.select_coordinates(1, 1, 'put flag')
     assert_true(@model.board[0][0].flag)
     assert_equal('next', status)
   end
 
   def test_select_coordinates_remove_flag
-    status = @controller.select_coordinates(1, 1, 'remove_flag')
+    status = @controller.select_coordinates(1, 1, 'delete flag')
     assert_false(@model.board[0][0].flag)
     assert_equal('next', status)
   end
 
   def test_select_coordinates_uncover_is_loser
-    status = @controller.select_coordinates(1, 1, 'uncover')
+    status = @controller.select_coordinates(1, 1, 'uncover cell')
     assert_equal('game_over', status)
   end
 
   def test_select_coordinates_uncover_is_winner
     (1..10).each do |row|
       (1..10).each do |col|
-        @controller.select_coordinates(row, col, 'uncover') unless [row, col] == [1, 1] || [row, col] == [10, 10]
+        @controller.select_coordinates(row, col, 'uncover cell') unless [row, col] == [1, 1] || [row, col] == [10, 10]
       end
     end
     @view.print_board(@model.board)
-    status = @controller.select_coordinates(10, 10, 'uncover')
+    status = @controller.select_coordinates(10, 10, 'uncover cell')
     assert_equal('winner', status)
   end
 end
