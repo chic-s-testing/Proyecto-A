@@ -6,7 +6,7 @@ require 'test/unit'
 
 class ModelWinnerTest < Test::Unit::TestCase
   def setup
-    @model = GameModel.new()
+    @model = GameModel.new
   end
 
   def test_not_winner_first_cell
@@ -25,8 +25,8 @@ class ModelWinnerTest < Test::Unit::TestCase
   end
 
   def test_winner
-    (0..9).each do | row |
-      (0..9).each do | col | 
+    (0..9).each do |row|
+      (0..9).each do |col|
         @model.mark_uncover(row, col) if @model.board[row][col].value >= 0
       end
     end
