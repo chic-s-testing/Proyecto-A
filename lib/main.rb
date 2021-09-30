@@ -13,7 +13,7 @@ view = GameView.new
 menu_view = GameMenuView.new
 model.add_observer(view)
 game_menu = GameMenu.new(menu_view)
-controller = GameController.new(model, view, menu_view, game_menu)
+controller = GameController.new(view, model, menu_view, game_menu)
 
 menu_view.puts_initial_game
 view.print_board(model.board)
