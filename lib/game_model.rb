@@ -7,7 +7,7 @@ require_relative './observer/observable'
 
 # Model for Minesweeper
 class GameModel < Observable
-  attr_reader :board, :number_not_bombs, :board_instance
+  attr_reader :board, :number_not_bombs, :board_instance, :number_discovered
 
   def initialize(bomb_seed = 'random')
     super()
@@ -29,18 +29,18 @@ class GameModel < Observable
   end
 
   def mark_uncover(row, col)
-    @board_instance.board[row][col].uncover_cell
-    @number_discovered += 1
+    @number_discovered += 1 unless @board[row][col].visible
+    @board[row][col].uncover_cell
     notify_all
   end
 
   def mark_add_flag(row, col)
-    @board_instance.board[row][col].put_flag
+    @board[row][col].put_flag
     notify_all
   end
 
   def mark_remove_flag(row, col)
-    @board_instance.board[row][col].delete_flag
+    @board[row][col].delete_flag
     notify_all
   end
 end
