@@ -27,15 +27,15 @@ class GameModel
   end
 
   def mark_uncover(row, col)
-    @board_instance.board[row][col].uncover_cell
-    @number_discovered += 1
+    @number_discovered += 1 unless @board[row][col].visible
+    @board[row][col].uncover_cell
   end
 
   def mark_add_flag(row, col)
-    @board_instance.board[row][col].put_flag
+    @board[row][col].put_flag
   end
 
   def mark_remove_flag(row, col)
-    @board_instance.board[row][col].delete_flag
+    @board[row][col].delete_flag
   end
 end
