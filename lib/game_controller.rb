@@ -15,14 +15,12 @@ class GameController
       row = @game_menu.request_x_coordinate
       col = @game_menu.request_y_coordinate
       action = @game_menu.request_action
-      @status = select_coordinates(row, col, action)
+      @status = select_coordinates(row, col, action.chomp)
     end
   end
 
   def select_coordinates(row, col, action = 'uncover')
-    action = action.chomp
     row, col = convert_input_to_coordinates(row, col)
-
     case action
     when 'uncover cell'
       return 'game_over' if check_game_over_routine(row, col)
