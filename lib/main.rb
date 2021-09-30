@@ -11,10 +11,10 @@ require_relative './game_menu'
 model = GameModel.new
 view = GameView.new
 menu_view = GameMenuView.new
-model.addObserver(view)
+model.add_observer(view)
 game_menu = GameMenu.new(menu_view)
-controller = BoardController.new(model, view, menu_view, game_menu)
+controller = GameController.new(model, view, menu_view, game_menu)
 
-menu_view.print_initial_game
-menu_view.print_board
+menu_view.puts_initial_game
+view.print_board(model.board)
 controller.start

@@ -20,7 +20,7 @@ class GameControllerTest < Test::Unit::TestCase
   end
 
   def test_select_coordinates_put_flag
-    status = @controller.select_coordinates(0, 0, 'put_flag')
+    status = @controller.select_coordinates(0, 0, 'put flag')
     assert_true(@model.board[0][0].flag)
     assert_equal('next', status)
   end

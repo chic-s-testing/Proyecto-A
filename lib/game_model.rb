@@ -3,12 +3,14 @@
 require_relative 'cell'
 require_relative 'board_creation'
 require_relative 'game_view'
+require_relative './observer/observable'
 
 # Model for Minesweeper
-class GameModel
+class GameModel < Observable
   attr_reader :board, :number_not_bombs, :board_instance
 
   def initialize(bomb_seed = 'random')
+    super()
     @board_instance = Board.new(bomb_seed)
     @board = @board_instance.board
     @number_not_bombs = @board_instance.not_bombs_cells
@@ -29,13 +31,17 @@ class GameModel
   def mark_uncover(row, col)
     @board_instance.board[row][col].uncover_cell
     @number_discovered += 1
+    notify_all
   end
 
   def mark_add_flag(row, col)
     @board_instance.board[row][col].put_flag
+    puts 'poniendo bandera'
+    notify_all
   end
 
   def mark_remove_flag(row, col)
     @board_instance.board[row][col].delete_flag
+    notify_all
   end
 end
