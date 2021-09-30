@@ -19,6 +19,7 @@ task :test do
   ruby 'test/winner_test.rb'
   ruby 'test/input_validations_test.rb'
   ruby 'test/controller_test.rb'
+  ruby 'test/game_test.rb'
 end
 
 RuboCop::RakeTask.new(:lint) do |task|

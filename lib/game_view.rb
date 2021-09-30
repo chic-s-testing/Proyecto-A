@@ -33,7 +33,7 @@ class GameView
     puts '¡Oh no! You have stepped on a mine, game over :(.'
   end
 
-  def update(board)
-    print_board(board)
+  def update(model)
+    print_board(model.board)
   end
 end

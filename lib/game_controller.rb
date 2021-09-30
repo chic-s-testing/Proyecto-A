@@ -2,14 +2,24 @@
 
 # Game's controller
 class GameController
+  attr_reader :status
+
   def initialize(board_view, board_model, menu_view, game_menu)
     @model = board_model
     @view = board_view
     @menu_view = menu_view
     @game_menu = game_menu
+    @status = 'next'
   end
 
-  def start; end
+  def start
+    while @status == 'next'
+      row = @game_menu.request_coordinate('x')
+      col = @game_menu.request_coordinate('y')
+      action = @game_menu.request_action
+      @status = select_coordinates(row, col, action.chomp)
+    end
+  end
 
   def select_coordinates(row, col, action = 'uncover')
     row, col = convert_input_to_coordinates(row, col)
