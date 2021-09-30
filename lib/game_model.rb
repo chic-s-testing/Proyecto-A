@@ -36,7 +36,6 @@ class GameModel < Observable
 
   def mark_add_flag(row, col)
     @board_instance.board[row][col].put_flag
-    puts 'poniendo bandera'
     notify_all
   end
 
