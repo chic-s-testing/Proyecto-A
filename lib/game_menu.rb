@@ -5,8 +5,8 @@ require_relative './input_validations'
 
 # Game's menu
 class GameMenu
-  def initialize
-    @game_menu_view = GameMenuView.new
+  def initialize(menu_view)
+    @game_menu_view = menu_view
     @input_validation = InputValidations.new
   end
 
