@@ -57,6 +57,14 @@ class InitializeModelTest < Test::Unit::TestCase
   def test_mark_uncover
     @model.mark_uncover(0, 0)
     assert_true(@model.board[0][0].visible)
+    assert_equal(1, @model.number_discovered)
+  end
+
+  def test_mark_uncover_already_uncovered
+    @model.mark_uncover(0, 0)
+    @model.mark_uncover(0, 0)
+    assert_true(@model.board[0][0].visible)
+    assert_equal(1, @model.number_discovered)
   end
 
   def test_mark_add_flag

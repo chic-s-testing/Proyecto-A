@@ -6,7 +6,7 @@ require_relative 'game_view'
 
 # Model for Minesweeper
 class GameModel
-  attr_reader :board, :number_not_bombs, :board_instance
+  attr_reader :board, :number_not_bombs, :board_instance, :number_discovered
 
   def initialize(bomb_seed = 'random')
     @board_instance = Board.new(bomb_seed)
