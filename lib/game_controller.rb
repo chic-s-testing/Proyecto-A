@@ -20,7 +20,6 @@ class GameController
   end
 
   def select_coordinates(row, col, action = 'uncover')
-    puts action
     case action
     when 'uncover'
       return 'game_over' if check_game_over_routine(row, col)
