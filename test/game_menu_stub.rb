@@ -3,11 +3,7 @@
 class GameMenuStub
   def initialize(*); end
 
-  def request_x_coordinate
-    1
-  end
-
-  def request_y_coordinate
+  def request_coordinate(*)
     1
   end
 

@@ -14,8 +14,8 @@ class GameController
 
   def start
     while @status == 'next'
-      row = @game_menu.request_x_coordinate
-      col = @game_menu.request_y_coordinate
+      row = @game_menu.request_coordinate('x')
+      col = @game_menu.request_coordinate('y')
       action = @game_menu.request_action
       @status = select_coordinates(row, col, action.chomp)
     end
