@@ -22,7 +22,7 @@ class GameMenuView
   end
 
   def puts_invalid_coordinate
-    puts 'Coordinate you select is outside de board :('
+    puts 'Value of coordinate must be between 1 and 10 :('
   end
 
   def puts_invalid_action

@@ -10,16 +10,6 @@ class InputValidationsTest < Test::Unit::TestCase
     @input_validation = InputValidations.new
   end
 
-  def test_valid_integer_input
-    $stdin = StringIO.new('5')
-    assert_equal(@input_validation.valid_integer_input, 5)
-  end
-
-  def test_invalid_integer_input
-    $stdin = StringIO.new('one')
-    assert_equal(@input_validation.valid_integer_input, 0)
-  end
-
   def test_valid_coordinate
     assert_equal(@input_validation.valid_coordinate(1), true)
   end

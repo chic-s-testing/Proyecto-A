@@ -2,12 +2,6 @@
 
 # Input's validations
 class InputValidations
-  def valid_integer_input
-    $stdin.gets.to_i
-  rescue StandardError
-    false
-  end
-
   def valid_coordinate(coordinate)
     return true if coordinate >= 1 && coordinate <= 10
 
