@@ -17,10 +17,6 @@ class GameMenuView
     puts 'Please Write the action you want to do (put flag, delete flag, uncover cell):'
   end
 
-  def puts_invalid_type_input(type)
-    puts "Invalid input, should be #{type}:"
-  end
-
   def puts_invalid_coordinate
     puts 'Value of coordinate must be between 1 and 10 :('
   end
