@@ -30,7 +30,7 @@ class GameMenu
   end
 
   def valid_coordinate
-    coordinate = @input_validation.valid_integer_input
+    coordinate = $stdin.gets.to_i
     unless coordinate
       @game_menu_view.puts_invalid_type_input('integer')
       return 0
