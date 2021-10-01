@@ -2,6 +2,8 @@
 
 # Observable class for the game model
 class Observable
+  attr_reader :observers
+
   def initialize
     @observers = []
   end
