@@ -5,10 +5,10 @@ require 'rake/testtask'
 
 task default: %w[lint test]
 
-Rake::TestTask.new("test:all") do |t| 
-  t.libs = ["lib"] 
-  t.warning = true 
-  t.test_files = FileList['test/**/*_test.rb'] 
+Rake::TestTask.new('test:all') do |t|
+  t.libs = ['lib']
+  t.warning = true
+  t.test_files = FileList['test/**/*_test.rb']
 end
 
 task :test do
