@@ -15,7 +15,7 @@ class InputValidations
   end
 
   def valid_action
-    action = $stdin.gets.to_s
+    action = $stdin.gets.to_s.split("\n")[0]
     return action if ['put flag', 'delete flag', 'uncover cell'].include?(action)
 
     false
