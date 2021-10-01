@@ -12,10 +12,7 @@ class GameMenu
 
   def request_coordinate(coordinate)
     @game_menu_view.puts_request_coordinate(coordinate)
-    coordinate = valid_coordinate
-    return coordinate if coordinate
-
-    0
+    valid_coordinate
   end
 
   def request_action
@@ -31,10 +28,6 @@ class GameMenu
 
   def valid_coordinate
     coordinate = $stdin.gets.to_i
-    unless coordinate
-      @game_menu_view.puts_invalid_type_input('integer')
-      return 0
-    end
     valid = @input_validation.valid_coordinate(coordinate)
     return coordinate if valid
 
