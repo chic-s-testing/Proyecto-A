@@ -7,9 +7,5 @@ class GameModelStub
     true
   end
 
-  def winner
-    false
-  end
-
   def mark_uncover(*); end
 end
