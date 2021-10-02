@@ -54,6 +54,8 @@
 
 - Generar reporte de coverage: rake test:all
 
+- Jugar el juego: ruby lib/main.rb
+
 ## Video Tutorial de uso 🌐
 
-- 
+- https://youtu.be/xtw-EHcRHdk
